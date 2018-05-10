@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Type on Strap 
 
 [![Build Status](https://travis-ci.org/Sylhare/Type-on-Strap.svg?branch=master)](https://travis-ci.org/Sylhare/Type-on-Strap) 
@@ -369,7 +370,46 @@ So if you're using the template as a theme, Make sure you have:
   - Some content ready in `_posts` and `_portfolio` to be displayed
 
 Now you can use any theme gem with github pages : [29/11/2017 Github Pages Broadcast](https://github.com/blog/2464-use-any-theme-with-github-pages)
+=======
+## Welcome to GitHub Pages
 
-## License
+You can use the [editor on GitHub](https://github.com/jkfeng1010/jkfeng1010.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
+Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+
+### Markdown
+
+Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+
+```markdown
+Syntax highlighted code block
+
+# Header 1
+## Header 2
+### Header 3
+
+- Bulleted
+- List
+
+1. Numbered
+2. List
+
+**Bold** and _Italic_ and `Code` text
+
+[Link](url) and ![Image](src)
+```
+
+For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+
+### Jekyll Themes
+
+Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jkfeng1010/jkfeng1010.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+>>>>>>> parent of e4c43d6... ii
+
+### Support or Contact
+
+<<<<<<< HEAD
 [The MIT License (MIT)](https://raw.githubusercontent.com/Sylhare/Type-on-Strap/master/LICENSE)
+=======
+Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+>>>>>>> parent of e4c43d6... ii

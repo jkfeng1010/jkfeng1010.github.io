@@ -25,7 +25,8 @@ date:   2018-05-12 17:12:12
 
 既然我们是要来聊聊技术这方面的，肯定需要将外壳拆掉的拉，下面直接上图 
 
-![avatar](/home/picture/1-0.png)
+<!-- ![avatar](/home/picture/1-0.png) -->
+![avatar](./img/1-0.png)
 
 Suspendisse lorem odio, blandit at nisl quis, hendrerit tempus tellus. Donec eget leo quis nisi vulputate consectetur. Praesent dignissim enim elit, congue luctus nisl cursus at. Sed rutrum molestie risus. Donec vulputate gravida accumsan. Vivamus tempus ullamcorper eleifend. Sed sagittis mi ut dolor tincidunt, ac rutrum nisi commodo.
 

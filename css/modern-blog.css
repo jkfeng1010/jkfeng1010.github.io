@@ -1,3 +1,31 @@
+/*MENU*/
+.menu {
+	position: fixed;
+	right: 150px;
+	top: 30%;
+	background: rgba(0,0,0,.3);
+	color: #fff;
+	font-weight: bold;
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.menu .menu_item {
+	list-style: none;
+	text-align: center;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+.menu .menu_item:hover {
+	transition: 1s;
+	background: rgba(255,255,255,.85);
+	color: #666;
+}
+.menu .menu_item.current {
+	background: rgba(255,255,255,.85);
+	color: #666;
+}
+
 
 /*CARD */
 

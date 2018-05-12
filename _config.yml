@@ -5,3 +5,4 @@ keywords: 硬件, PCB, 电路图,心得体会
 author: JKfeng1010
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
+menu: 菜单1,菜单2,菜单3

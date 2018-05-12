@@ -3,15 +3,29 @@ title:  "test1"
 subtitle: "It's always a bit messy"
 author: "Wferr"
 avatar: "img/authors/wferr.png"
-image: "img/f.jpg"
-date:   2015-04-25 12:12:12
+image: "img/1-0.png"
+date:   2018-05-12 17:12:12
 ---
 
 ### Dolor sit amet?
-tese
+聊聊无线充电————华为Mate RS保时捷版无线充电器详解（上篇）
 
-### Aliquam suscipit.
-Cras eget nisl accumsan, porta nisl in, egestas sapien. Vestibulum gravida nulla sed facilisis tempor. Suspendisse maximus nisi sit amet velit sodales fringilla. Vivamus luctus risus eget dui consectetur porttitor. Maecenas ut ultrices orci. Maecenas mollis est eu sodales mollis. Nulla facilisi. Suspendisse eros arcu, elementum sed sem eu, pharetra rhoncus odio. Proin nec tincidunt velit. Cras nisl augue, faucibus sed mauris in, vestibulum mollis nisl. Nam id libero ultrices, consequat ex vitae, convallis nulla.
+
+随着华为Mate RS成为手机奢侈件的新宠后；人们聊起RS保时捷系列的话题也多了起来，今天我们来聊聊这款手机的配件——华为Mate RS保时捷版无线充电器，然后再展开聊聊无线充电这些事
+
+
+### 一、华为Mate RS保时捷版无线充电器
+主体 型号 华为无线充电器 
+类型 单口 
+品牌 华为 
+适用手机品牌 通用 
+规格 输入电压（v） 9V 
+输出电压（v） 5V 
+插口 TYPE-C
+
+既然我们是要来聊聊技术这方面的，肯定需要将外壳拆掉的拉，下面直接上图 
+
+![avatar](/home/picture/1-0.png)
 
 Suspendisse lorem odio, blandit at nisl quis, hendrerit tempus tellus. Donec eget leo quis nisi vulputate consectetur. Praesent dignissim enim elit, congue luctus nisl cursus at. Sed rutrum molestie risus. Donec vulputate gravida accumsan. Vivamus tempus ullamcorper eleifend. Sed sagittis mi ut dolor tincidunt, ac rutrum nisi commodo.
 

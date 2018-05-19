@@ -1,8 +1,8 @@
 # Site settings
 title: JKfeng1010的博客
 description: 一个硬件工程师的自我修炼
-keywords: 硬件, PCB, 电路图,心得体会
+keywords: 硬件,PCB,电路图,电子,新技术
 author: JKfeng1010
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
-menu: 菜单1,菜单2,菜单3
+menu: 菜单1,菜单2,菜单3，菜单4,

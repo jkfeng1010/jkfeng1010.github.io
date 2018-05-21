@@ -73,7 +73,7 @@ var demo = (function (window) {
      * @private
      */
     var _mapPolygons = function (pattern) {
-
+        
         // Append SVG to pattern container.
         $(SELECTORS.pattern).append(pattern);
 

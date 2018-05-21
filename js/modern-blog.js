@@ -58,7 +58,7 @@ var demo = (function (window) {
             y_colors: 'random'
         }).svg(); // Render as SVG.
 
-        _mapPolygons(pattern);
+        // _mapPolygons(pattern);
 
         _bindCards();
 

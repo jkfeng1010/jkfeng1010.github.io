@@ -14,21 +14,93 @@ date:   2018-05-12 17:12:12
 随着华为Mate RS成为手机奢侈件的新宠后；人们聊起RS保时捷系列的话题也多了起来，今天我们来聊聊这款手机的配件——华为Mate RS保时捷版无线充电器，然后再展开聊聊无线充电这些事
 
 
-### 一、华为Mate RS保时捷版无线充电器
-主体 型号 华为无线充电器 
-类型 单口 
-品牌 华为 
-适用手机品牌 通用 
-规格 输入电压（v） 9V 
-输出电压（v） 5V 
-插口 TYPE-C
+### 一、小米发布会的米8探索者——很吓人的技术分析
 
-既然我们是要来聊聊技术这方面的，肯定需要将外壳拆掉的拉，下面直接上图 
+
+
 
 ![avatar](./img/1-0.png)
 
-Suspendisse lorem odio, blandit at nisl quis, hendrerit tempus tellus. Donec eget leo quis nisi vulputate consectetur. Praesent dignissim enim elit, congue luctus nisl cursus at. Sed rutrum molestie risus. Donec vulputate gravida accumsan. Vivamus tempus ullamcorper eleifend. Sed sagittis mi ut dolor tincidunt, ac rutrum nisi commodo.
+就在刚刚小米在深圳发布了3款手机1款电视1款VR一体1款手环，下面我们从技术的角度来看看这次发布会的探索版。
 
-Fusce non elit in diam rutrum vestibulum. Donec vitae elementum erat. Praesent elementum eget justo at bibendum. Fusce interdum diam lorem, ut placerat elit pretium quis. Quisque eu urna at quam commodo sagittis. Etiam posuere convallis tincidunt. Phasellus vitae ligula neque. Vivamus a purus at dolor iaculis placerat. Curabitur convallis eu lacus congue sagittis.
+小米8透明探索版
+一、全球首款压感屏幕指纹手机——屏幕解锁技能分析
 
-Aliquam suscipit fermentum mauris a accumsan. In facilisis, mauris quis pulvinar tempus, turpis sapien sodales nibh, nec feugiat augue est quis nisi. Fusce eget odio feugiat, luctus quam et, dapibus nulla. Sed ornare lacus non libero lacinia pretium. In eu dui vitae purus euismod feugiat ac ac est. Morbi vitae pretium lorem, non eleifend felis. Nullam at massa feugiat, rutrum elit at, semper lacus. Etiam vel rutrum felis. Nullam quis auctor lorem, et tempor arcu.
+
+
+
+
+压力传感方案目前市面比较成熟的有五种：
+
+
+
+1、压电压力传感器
+
+压电式压力传感器主要基于压电效应（Piezoelectric effect），利用电气元件和其他机械把待测的压力转换成为电量，从而传输电量变量给系统。
+
+
+
+2、压阻压力传感器
+
+压阻压力传感器主要基于压阻效应（Piezoresistive effect）。压阻效应是用来描述材料在受到机械式应力下所产生的电阻变化。不同于上述压电效应，压阻效应只产生阻抗变化，再通过电路检测到电阻的变化，来达到效果。
+
+
+
+3、电容式压力传感器
+
+电容式压力传感器是一种利用电容作为敏感元件，将被测压力转换成电容值改变的压力传感器。这种压力传感器一般采用圆形金属薄膜或镀金属薄膜作为电容器的一个电极，当薄膜感受压力而变形时，薄膜与固定电极之间形成的电容量发生变化，再通过电路检测到电容的变化，来达到效果。
+
+
+
+4、电磁压力传感器
+
+利用电磁原理的传感器统称，主要包括电感压力传感器、霍尔压力传感器、电涡流压力传感器等
+
+
+
+5、振弦式压力传感器
+
+振弦式压力传感器属于频率敏感型传感器，这种频率测量具有想当高的准确度，因为时间和频率是能准确测量的物理量参数，而且频率信号在传输过程中可以忽略电缆的电阻、电感、电容等因素的影响。振弦式压力传感器的敏感元件是拉紧的钢弦，敏感元件的固有频率与拉紧力的大小有关。
+
+
+
+当然小米8探索版究竟用的是哪款方案和哪款传感器，希望在后续的更新中能够拆卸分析，从发布会的PPT上觉得还是比较大的概率性是振弦式压力传感器。
+
+二、人脸解锁——Face ID技术分析
+
+
+
+
+
+
+Face ID”它基于3D结构光技术，可投射，创建脸部毫米级3D面部模型。
+
+通过前置的 Infrared Camera 和 Dot Project 组件，小米8探索版能够快速扫描人的面部并在人脸表面形成 33000个编码点阵来获取面部深度信息，把你的脸部进行一个3D建模。
+
+
+
+
+
+所以这次845加持的几个功能就派上用场了：
+
+Spectra 280 ISP
+
+Adreno 630
+
+Hexagon DSP
+
+SPU
+
+为Face ID的人脸处理和建模、安全性提供了保障。
+三、透明玻璃机身
+
+
+
+透明玻璃机身这个技术本来应该请我们的结构和材料工程师来好好分析的，但有想到了，本人搭建这个公众号的目的在于帮助更多的人了解电子，和带电子人入门和行内人交流。
+因此也想出了一个和电子搭边的理由来聊聊透明玻璃机身——
+
+
+那就是我们可以更加清晰的看到了电路板的芯片和布局
+
+欢迎关注我的公众号
+<img src="/e/微信公众号二维码.jpg" width="128" height="128" />

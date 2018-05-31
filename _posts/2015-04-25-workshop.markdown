@@ -1,9 +1,9 @@
 ---
 title:  "小米发布会的米8探索者——很吓人的技术分析!"
-subtitle: "The Fly!"
-author: "Wferr"
+subtitle: "技术流分析"
+author: "JKFENG"
 avatar: "img/authors/wferr.png"
-image: "img/a.jpg"
+image: "img src="/e/13-1.jpg"
 date:   2018-05-31 12:12:12
 ---
 
@@ -89,7 +89,7 @@ SPU
 为Face ID的人脸处理和建模、安全性提供了保障。
 三、透明玻璃机身
 
-
+<img src="/e/13-1.jpg"/>
 
 透明玻璃机身这个技术本来应该请我们的结构和材料工程师来好好分析的，但有想到了，本人搭建这个公众号的目的在于帮助更多的人了解电子，和带电子人入门和行内人交流。
 因此也想出了一个和电子搭边的理由来聊聊透明玻璃机身——

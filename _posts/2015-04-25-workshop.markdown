@@ -3,7 +3,7 @@ title:  "小米发布会的米8探索者——很吓人的技术分析!"
 subtitle: "技术流分析"
 author: "JKFENG"
 avatar: "img/authors/wferr.png"
-image: "img src="/e/13-1.jpg"
+image: "img/13-1.jpg"
 date:   2018-05-31 12:12:12
 ---
 
@@ -98,4 +98,4 @@ SPU
 那就是我们可以更加清晰的看到了电路板的芯片和布局
 
 欢迎关注我的公众号
-<img src="/e/微信公众号二维码.jpg" width="128" height="128" />
+"img/微信公众号二维码.jpg"

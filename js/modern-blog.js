@@ -124,14 +124,10 @@ var demo = (function (window) {
             var cardImage = $card.find(SELECTORS.cardImage);
             var cardClose = $card.find(SELECTORS.cardClose);
 
-            $(cardImage).on('click', function (e) {
-                e.stopPropogation();
-                e.cancelBubble();
+            $(cardImage).on('click', function () {
                 location.hash = $card.attr(ATTRIBUTES.id);
             });
-            $(cardClose).on('click', function (e) {
-                e.stopPropogation();
-                e.cancelBubble();
+            $(cardClose).on('click', function () {
                 location.hash = '';
             });
         });

@@ -17,8 +17,7 @@ date:   2018-05-31 12:12:12
 小米8透明探索版
 一、全球首款压感屏幕指纹手机——屏幕解锁技能分析
 
-"img/13-2.gif"
-
+![图片1](https://img-blog.csdn.net/20180605155207417?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 
 压力传感方案目前市面比较成熟的有五种：

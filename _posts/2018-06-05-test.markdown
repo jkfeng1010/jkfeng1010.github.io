@@ -1,10 +1,107 @@
 ---
-title:  "测试文档!"
+title:  "AM335x硬件开发使用指南（四）"
 subtitle: "技术流分析"
 author: "JKFENG"
 avatar: "img/authors/wferr.png"
-image: "img/13-3.png"
+image: "img/ARMchip.png"
 date:   2018-05-31 12:12:12
 ---
 ### 一、测试文档
-![图片1](https://img-blog.csdn.net/20180605155207417?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+Functional Block Diagram
+------------------------
+
+![这里写图片描述](https://img-blog.csdn.net/20180605154011760?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+四、Display
+----------
+
+**1、24-bit LCD controller**
+24位的液晶显示控制，有时候开发的也会用到16位，下面贴上AM335X对于这着24位的引脚定义，方面各位后续开发对于引脚的引出
+
+![这里写图片描述](https://img-blog.csdn.net/2018060515423577?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+AM335X中LCDC由两个独立的控制器，光栅控制器和LCD接口显示驱动器（LIDD）控制器组成。每个控制器都独立于另一个控制器运行，并且在任何给定时间只有其中一个控制器处，由下图可以知道数据在寄存器后分为了两条线：Raster controller、LIDD controller。
+![这里写图片描述](https://img-blog.csdn.net/20180605155207417?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+TTL信号是TFT-LCD能识别的标准信号，就算是以后用到的LVDS TMDS 都是在它的基础上编码得来的。
+TTL信号线基本都是由以下的信号线组成：
+RGB三基色
+水平同步(行同步)HSYNC
+垂直同步(帧同步)VSYNC
+使能信号DE
+时钟信号PCLK
+数据信号DATA[0..23]
+
+LVDS（低压差分信号）的工作原理是用一颗专门的IC，把输入的TTL信编码成LVDS 信号
+6位为4组差分（6位屏就没有D3- D3+这一组信号）
+8位为5组差分
+数据线名称为D0- D0+ D1- D1+ D2- D2+ CK- CK+ D3- D3+ 
+在屏的另一边，也有一颗相同功能的解码IC，把LVDS信号变成TTL信号，屏最终用的还是TTL信号，因为LVDS信号电平为1V左右，而且-线和+线之间的干扰还能相互抵消。所以抗干扰能力非常强。
+很适合用在高分辩率所带来高码率的屏上。
+
+![这里写图片描述](https://img-blog.csdn.net/20180605161045326?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+----------
+
+
+**2、Touch screen controller**
+
+AM335X中触摸屏控制器（TSC）和模数转换器（ADC）子系统（TSC_ADC）是一款8通道通用ADC，可选支持4线，5线或8线交叉TSC转换电阻面板。 TSC_ADC子系统可以配置为在以下应用程序中使用：
+
+• 8 general-purpose ADC channels
+
+• 4-wire TSC with 4 general-purpose ADC channels
+![这里写图片描述](https://img-blog.csdn.net/20180605162325424?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+• 5-wire TSC with 3 general-purpose ADC channels
+![这里写图片描述](https://img-blog.csdn.net/20180605162339300?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+• 8-wire TSC.
+![这里写图片描述](https://img-blog.csdn.net/20180605162352838?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+而我们在实际应用中，使用比较多触摸屏往往是四导线制，并且用的I2C或则SPI方案。
+
+下图为使用的SPI方案，Input和Output引脚接的是SPI的DATE_IN 和 DATE_OUT
+
+![这里写图片描述](https://img-blog.csdn.net/20180605162554843?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+如果是使用I2C方案的话，输入引脚就只涉及到了时钟脚SLK和IO脚SDA了。
+
+
+----------
+
+欢迎关注本人公众号：
+----------
+
+![这里写图片描述](https://img-blog.csdn.net/20180605163047559?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+AM335x硬件开发使用指南（三） 
+https://mp.weixin.qq.com/s/LHOcr66ktBisaYdORG-2cQ
+https://blog.csdn.net/weixin_42124889/article/details/80571506
+
+AMR335x硬件开发使用指南（二） 
+https://mp.weixin.qq.com/s/krjhaz7LvXxiT2a9pvnAFw
+
+AM335x硬件开发使用指南（一） 
+https://blog.csdn.net/weixin_42124889/article/details/80514842
+
+
+
+聊聊无线充电——华为Mate RS保时捷版无线充电器详解（上篇） 
+https://blog.csdn.net/weixin_42124889/article/details/80290757
+
+聊聊无线充电——华为Mate RS保时捷版无线充电器详解（下篇） 
+https://mp.weixin.qq.com/s/9o8-7YANXCiydjQ8u-EDsg
+
+手机快充技术——快充技术&硬件详解 
+https://blog.csdn.net/weixin_42124889/article/details/80255434
+
+一文知晓高通晓龙845 
+https://mp.weixin.qq.com/s?__biz=MzU2NjYwMzQ1Ng==&mid=2247483678&idx=1&sn=c396ca9582a7f5124e0b00cb94d6a482&chksm=fca8bab1cbdf33a79189346c9ed964bca08f446427f67a509b3577bec2fd533fe6aeb39d5eaf#rd
+
+A12 chip即将来临，是IPhone XI？ 
+https://mp.weixin.qq.com/s/j3IJdhY1CKS7aW120zgs8Q

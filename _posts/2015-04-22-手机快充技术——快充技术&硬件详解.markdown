@@ -1,0 +1,106 @@
+---
+title:  "手机快充技术——快充技术&硬件详解"
+subtitle: "The Bigger the better?"
+author: "Wferr"
+avatar: "img/authors/wferr.png"
+image: "img/quick.jpg"
+date:   2015-04-22 12:12:12
+---
+
+### 手机快充技术——快充技术&硬件详解
+快充技术的四大家族
+---------
+高通的QuickCharge版（如QC2.0、QC3.0、QC4.0）
+联发科版（Pump Express和Pump Express plus）
+OPPO 的VOOC技术（SuperVOOC和VOOC）
+兼容QuickCharge协议和海思快充协议华为快充技术
+
+
+后来加入的各类快充技术基本都是基于以上四种：如三星FastCharge、华硕手机的快速充电，这两个穿上高通的马甲；魅族的mCharge则穿上联发科PEP的马甲；
+
+
+----------
+以上四种充电模式归根到底都是基于一下两种电流模式：
+
+**高电压高电流模式**：这种方式同时增大电流与电压，这样由公式P=UI,我们可以知道的是，这种方式是增大功率最好的办法，但增大电压的同时会产生更多的热能，这样其中所消耗的能量也是越多，并且电压与电流不是无限制的随意增大。
+
+**低电压高电流模式：**在电压一定的情况下，增加电流，可以使用并联电路的方式进行分流，恒定电压下，进行并联分流之后每个电路所分担的压力越小，在手机中也进行同样处理的话，这个每条电路所承受的压力也就越小。
+
+
+高压快充的代表则是高通的QuickCharge和联发科的Pump Express
+低压快充的代表主要有OPPO的VOOC、华为的SuperCharge、Magic Power
+
+
+
+
+
+----------
+
+一、高通的QuickCharge版
+-----------------
+我们先来聊聊高通的快充技术，现在高通QC4.0已经发布，但是目前市面上常见的高通Quick Charge快充标准大多为QC2.0和QC3.0两种；
+
+
+下面插入一张图片，
+可以清晰地可以看出QC1.0到QC4.0的各种差别和进化之路
+
+![这里写图片描述](https://img-blog.csdn.net/20180509162957821?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+----------
+
+
+**聊聊高通的QuickCharge快充技术**
+
+**高通的QuickCharge快充技术是通过USB端口的D+和D-来个信号实现调压，加上协议；**
+
+快充技术的原理，通过USB端口的D+与D-的不同电压给合，来向充电器申请相应的输出电压供手机充电。
+QC2.0并不是简单的D+与D-的组合就可以让充电器输出所需的电压，而是**还有一些协议在里面**，需要先发送握手信号，比如1.5s的握手电压组合，才能进行下一步的输出，否则，将D+与D-电平设置好是不会改变充电器的输出电压的，这也是为了更好的保护非QC2.0技术的手机，不会因为误触发了充电器的升压机制而烧毁手机，下图是QC2.0充电器原理图的调压部分（使用的是国产的一块芯片；而在手机中很多使用的是CHY100芯片）。
+
+![这里写图片描述](https://img-blog.csdn.net/20180509164018786?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+----------
+
+
+二、联发科Pump Express快充技术
+--
+**联发科的Pump Express快充技术，是通过USB端口的VBUS来向充电器通讯并申请相应的输出电压的。**
+Pump Express是通过VBUS上的电流脉冲来通讯，但最终的目的是提升充电器的电压到5V，7V，9V。
+![这里写图片描述](https://img-blog.csdn.net/20180509165018444?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+**三、OPPO VOOC闪充技术**
+
+大家对OPPO最熟悉的莫过于2件事
+1、充电5分钟，通话2小时
+2、满大街的OPPO线下店面和综艺冠名
+
+现在我们来聊聊第一件事，OPPO是如何做到充电5分钟，通话2小时的；
+OPPO官方称自己的快充技术为VOOC，现在又推出了Super VOOC；
+
+
+**低电压高电流标准**的OPPO VOOC闪充技术，**VOOC选择的是保持电压不变，通过加大电流的方式提升充电速度**。
+
+VOOC闪充的充电器有专门的芯片，MCU单片微型计算机来取代传统充电电路中的降压电路，智能的MCU管理芯片可以自动识别当前充电设备是否支持VOOC闪充；
+专门的适配器、电池、数据线、电路、接口，所有这一切都满足时候，才能开启闪充，实现4.5A大电流输出输入。如果检测到不支持，会自动使用稳定充电电流实现慢速充电。
+
+
+----------
+**OPPO的SuperVOOC技术**
+
+![这里写图片描述](https://img-blog.csdn.net/20180509165646382?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+在了解超级闪充技术之前，先熟悉一下手机电池充电的三个阶段，分别为恒流预充电、大电流恒流充电和恒压充电。当手机处于低电量时，电压也会相应降低，此时充电器会使用较低的电流对电池进行充电，当电池的电压高于预定数值后，就会采用恒流充电。
+OPPO的最新闪充技术正是利用了这样的工作原理，**对电流进行严格的调控**，这样的好处在于，避免了增压提升功率的方式，因此在线路损耗方面会减少很多，并且有效遏制了手机发热的现象。
+
+
+----------
+**四、兼容QuickCharge协议和海思快充协议华为快充技术**
+
+![这里写图片描述](https://img-blog.csdn.net/2018050918295823?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+
+![这里写图片描述](https://img-blog.csdn.net/20180509183152638?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+

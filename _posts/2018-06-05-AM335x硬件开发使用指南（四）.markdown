@@ -6,7 +6,7 @@ avatar: "img/authors/wferr.png"
 image: "img/ARMchip.png"
 date:   2018-05-31 12:12:12
 ---
-### 一、测试文档
+### 一、AM335x硬件开发使用指南（四）
 
 Functional Block Diagram
 ------------------------

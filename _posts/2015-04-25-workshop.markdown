@@ -1,10 +1,10 @@
 ---
-title:  "Watches"
-subtitle: "The Bigger the better?"
-author: "N"
+title:  "A Craftsman Workshop"
+subtitle: "It's always a bit messy"
+author: "n"
 avatar: "img/authors/nadun.jpg"
-image: "img/c.jpg"
-date:   2015-04-22 12:12:12
+image: "img/f.jpg"
+date:   2015-04-25 12:12:12
 ---
 
 ### Dolor sit amet?

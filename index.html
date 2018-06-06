@@ -79,14 +79,15 @@ layout: compress
                 <div class="card" data-id="{{ post.id }}">
                     <div class="card__container card__container--closed">
                         <svg class="card__image" xmlns="http://www.w3.org/2000/svg"
-                             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1200"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100% 100%"
+                             width="100%" height="100%"
                              preserveAspectRatio="xMidYMid slice">
                             <defs>
                                 <clipPath id="{{ post.id }}-clip-path">
                                     <polygon class="clip" points="0,1200 0,0 1920,0 1920,1200"></polygon>
                                 </clipPath>
                             </defs>
-                            <image clip-path="url(#{{ post.id }}-clip-path)" width="1920" height="1200"
+                            <image clip-path="url(#{{ post.id }}-clip-path)" style="width: 100%;height: 100%;"
                                    xlink:href="{{ post.image }}"></image>
                         </svg>
                         <div class="card__content">

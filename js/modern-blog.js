@@ -271,13 +271,15 @@ var demo = (function (window) {
             return parseInt(index, 10);
         };
         if (fromId) {
-            var fromBlogCard = $('[' + ATTRIBUTES.id + '="' + fromId + '"]')[0];
+            var _fromId = decodeURIComponent(fromId)
+            var fromBlogCard = $('[' + ATTRIBUTES.id + '="' + _fromId + '"]')[0];
             if (fromBlogCard) {
                 _playSequence.call(fromBlogCard, false, getIndex(fromBlogCard));
             }
         }
         if (toId) {
-            var toBlogCard = $('[' + ATTRIBUTES.id + '="' + toId + '"]')[0];
+            var _toId = decodeURIComponent(toId);
+            var toBlogCard = $('[' + ATTRIBUTES.id + '="' + _toId + '"]')[0];
             if (toBlogCard) {
                 _playSequence.call(toBlogCard, true, getIndex(toBlogCard));
             }

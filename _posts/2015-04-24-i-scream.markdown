@@ -1,20 +1,87 @@
 ---
-title:  "I scream"
+title:  "AM335x硬件开发使用指南（一）"
 subtitle: "But do you scream?"
 author: "Wferr"
 avatar: "img/authors/wferr.png"
-image: "img/e.jpg"
+image: "img/ARMchip.png"
 date:   2015-04-24 12:12:12
 ---
 
-### Dolor sit amet?
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum non mi non pulvinar. Donec tempus risus vel ex fringilla tempor. Vivamus pharetra non mauris quis fermentum. Vestibulum sed maximus elit, sit amet suscipit orci. Morbi at enim at libero dignissim egestas vel ac nisi. Etiam at lectus a arcu sodales consequat. Aliquam consequat ligula sed purus tincidunt, a ultrices nibh dapibus. Phasellus convallis ipsum nec semper ultricies. In facilisis lacus velit, sit amet lacinia velit blandit id. Nullam ut magna erat. Aliquam sit amet dapibus odio, aliquet tempus tortor. Donec in nisi massa.
+### AM335x硬件开发使用指南（一）
+Functional Block Diagram
+------------------------
 
-### Aliquam suscipit.
-Cras eget nisl accumsan, porta nisl in, egestas sapien. Vestibulum gravida nulla sed facilisis tempor. Suspendisse maximus nisi sit amet velit sodales fringilla. Vivamus luctus risus eget dui consectetur porttitor. Maecenas ut ultrices orci. Maecenas mollis est eu sodales mollis. Nulla facilisi. Suspendisse eros arcu, elementum sed sem eu, pharetra rhoncus odio. Proin nec tincidunt velit. Cras nisl augue, faucibus sed mauris in, vestibulum mollis nisl. Nam id libero ultrices, consequat ex vitae, convallis nulla.
+![这里写图片描述](https://img-blog.csdn.net/20180530191711288?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-Suspendisse lorem odio, blandit at nisl quis, hendrerit tempus tellus. Donec eget leo quis nisi vulputate consectetur. Praesent dignissim enim elit, congue luctus nisl cursus at. Sed rutrum molestie risus. Donec vulputate gravida accumsan. Vivamus tempus ullamcorper eleifend. Sed sagittis mi ut dolor tincidunt, ac rutrum nisi commodo.
 
-Fusce non elit in diam rutrum vestibulum. Donec vitae elementum erat. Praesent elementum eget justo at bibendum. Fusce interdum diam lorem, ut placerat elit pretium quis. Quisque eu urna at quam commodo sagittis. Etiam posuere convallis tincidunt. Phasellus vitae ligula neque. Vivamus a purus at dolor iaculis placerat. Curabitur convallis eu lacus congue sagittis.
+基本硬件开发的所有335X的接口资源都在上图中显示出来了。
+下面来详细分析下Functional Block Diagram里面的一些资源
 
-Aliquam suscipit fermentum mauris a accumsan. In facilisis, mauris quis pulvinar tempus, turpis sapien sodales nibh, nec feugiat augue est quis nisi. Fusce eget odio feugiat, luctus quam et, dapibus nulla. Sed ornare lacus non libero lacinia pretium. In eu dui vitae purus euismod feugiat ac ac est. Morbi vitae pretium lorem, non eleifend felis. Nullam at massa feugiat, rutrum elit at, semper lacus. Etiam vel rutrum felis. Nullam quis auctor lorem, et tempor arcu.
+一、串口类
+---
+**1、UART**：
+拥有6路的UART
+All UARTs Support IrDA and CIR Modes
+• All UARTs Support RTS and CTS Flow Control
+• UART1 Supports Full Modem Control
+电路中如果需要用到485、232通信基本都在这6路UART里转换
+
+
+**2、SPI**：
+拥有2路的SPI，一般其中一路会用来接FLASH（SPI FLASH）
+另外一路则外开发的扩展功能使用，当然有时候也会将SPI FLASH舍去
+![这里写图片描述](https://img-blog.csdn.net/20180530192422885?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+**3、McASP**：
+拥有2路的McASP，即我们的音频信号接口，涉及到I2S
+![这里写图片描述](https://img-blog.csdn.net/20180530192922486?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+**4、CAN**:
+拥有2路的CAN
+![这里写图片描述](https://img-blog.csdn.net/20180530193117219?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+硬件上CAN总线的设计，记得末端的阻抗匹配，因为以往看到的很多电路图中，很多人都会把这个电阻给遗忘点，虽然不加这个电阻，硬件电路也是能用的，但是一旦涉及到了较高速的时候，就有丢失数据的风险了。
+
+**5、USB 2.0 HS**：
+注意这里使用的USB 2.0 HS，即支持USB2.0的最高传输速度（High-speed模式）
+
+PS：的USB2.0标准将USB接口速度划分为三类，分别是传输速率在25Mbps-400 Mbps （最大480 Mbps）的High-speed接口（简称HS）；传输速率在500Kbps-10Mbps（最大12Mbps）的Full-speed接口（简称FS）；传输速率在10kbps-400 100kbps （最大1.5Mbps）的Low-speed接口（简称LS）
+
+如果硬件电路上需要使用到HS模式的话，USB这对查分线需要做一定的处理：HUB_USBx_DM,HUB_USBx_DPshould be routed in 90 ohm differential impedance matching control
+![这里写图片描述](https://img-blog.csdn.net/20180530194306360?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+**6、Ethernet Media Access Controller (EMAC)(2-port) 10M, 100M, 1G  IEEE 1588v2, and switch(MII, RMII, RGMII)**：
+
+达到1G速率的网口功能，支持IEEE 1588V2 协议的高精度时钟。
+![这里写图片描述](https://img-blog.csdn.net/20180530194931213?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+其实在本人的设计中，曾经碰到了一个处理了比较久的问题，那时候选用的方案是基于AM3352和MICROCHIP(美国微芯)的千兆以太网芯片KSZ9031；
+一开始出现了网口ping不通问题，后来处理了后，又出现丢包问题。这个先抛出这个问题，以后有空再来好好分析下这些问题的处理。
+
+
+二、System
+--------
+这个下次再更新吧。
+
+欢迎关注本人公众号：
+
+![这里写图片描述](https://img-blog.csdn.net/20180530195329182?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+[AM335x硬件开发使用指南](https://mp.weixin.qq.com/s/_LyrLfjVbcO5G_-nBDlaJw)
+
+聊聊无线充电——华为Mate RS保时捷版无线充电器详解（上篇） 
+https://blog.csdn.net/weixin_42124889/article/details/80290757
+
+聊聊无线充电——华为Mate RS保时捷版无线充电器详解（下篇） 
+https://mp.weixin.qq.com/s/9o8-7YANXCiydjQ8u-EDsg
+
+手机快充技术——快充技术&硬件详解 
+https://blog.csdn.net/weixin_42124889/article/details/80255434
+
+一文知晓高通晓龙845 
+https://mp.weixin.qq.com/s?__biz=MzU2NjYwMzQ1Ng==&mid=2247483678&idx=1&sn=c396ca9582a7f5124e0b00cb94d6a482&chksm=fca8bab1cbdf33a79189346c9ed964bca08f446427f67a509b3577bec2fd533fe6aeb39d5eaf#rd
+
+A12 chip即将来临，是IPhone XI？ 
+https://mp.weixin.qq.com/s/j3IJdhY1CKS7aW120zgs8Q

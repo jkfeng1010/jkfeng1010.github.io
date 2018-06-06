@@ -1,97 +1,111 @@
 ---
-title:  "小米发布会的米8探索者——很吓人的技术分析!"
+title:  "AM335x硬件开发使用指南（三）"
 subtitle: "技术流分析"
 author: "JKFENG"
 avatar: "img/authors/wferr.png"
-image: "img/13-2.png"
+image: "img/ARMchip.png"
 date:   2018-05-31 12:12:12
 ---
-### 一、小米发布会的米8探索者——很吓人的技术分析
+### 一、AM335x硬件开发使用指南（三）
 
 
 
 
 
-就在刚刚小米在深圳发布了3款手机1款电视1款VR一体1款手环，下面我们从技术的角度来看看这次发布会的探索版。
-
-小米8透明探索版
-一、全球首款压感屏幕指纹手机——屏幕解锁技能分析
-
-![图片1](https://img-blog.csdn.net/20180605155207417?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+Functional Block Diagram
+------------------------
+![这里写图片描述](https://img-blog.csdn.net/20180604184439298?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 
-压力传感方案目前市面比较成熟的有五种：
+三、Parallel
+----------
+由于本人认为翻译为并行功能特别的土，所以就直接用上Parallel这个单词了
+
+下面进入主题
+
+**前言**
+AMR335X包含多媒体卡（MMC），安全数字（SD）和安全数字I / O（SDIO）3个高速接口模块（MMCHS）。AMR335X为MMC，SD存储卡或SDIO卡提供接口。
+
+而且对于这3个接口（MMC/SD/SDIO）来说都是使用以下的几个引脚：
+
+**• MMC_CMD** This pin is used for two-way communication between the connected card and the MMC/SD/SDIO controller. The MMC/SD/SDIO controller transmits commands to the card and the memory card drives responses to the commands on this pin；
+
+**• MMC_DAT7-0** Depending on which type of card you are using, you may need to connect 1, 4, or 8 data lines. The number of DAT pins (the data bus width) is set by the Data Transfer Width (DTW) bit in the MMC control register (SD_HCTL). For more information, see the registers section of this document；
+
+**• MMC_CLK** This pin provides the clock to the memory card from the MMC/SD controller；
+
+**• MMC_POW** Used for MMC/SD card's cards on/off power supply control. When high, denotes power-on condition；
+
+**• MMC_SDCD** This input pin serves as the MMC/SD/SDIO carrier detect. This signal is received from a mechanical switch on the slot；
+
+**• MMC_SDWP** This input pin is used for the SD/SDIO card's write protect. This signal is received from a mechanical protect switch on the slot (system dependant). Applicable only for SD and SDIO cards that have a mechanical sliding tablet on the side of the card。
+![这里写图片描述](https://img-blog.csdn.net/201806041913481?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 
-
-1、压电压力传感器
-
-压电式压力传感器主要基于压电效应（Piezoelectric effect），利用电气元件和其他机械把待测的压力转换成为电量，从而传输电量变量给系统。
+**1、Multimedia Card（MMC）**
 
 
+用AMR335X设计多媒体基本准从如下
+![这里写图片描述](https://img-blog.csdn.net/20180604185044493?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-2、压阻压力传感器
-
-压阻压力传感器主要基于压阻效应（Piezoresistive effect）。压阻效应是用来描述材料在受到机械式应力下所产生的电阻变化。不同于上述压电效应，压阻效应只产生阻抗变化，再通过电路检测到电阻的变化，来达到效果。
-
-
-
-3、电容式压力传感器
-
-电容式压力传感器是一种利用电容作为敏感元件，将被测压力转换成电容值改变的压力传感器。这种压力传感器一般采用圆形金属薄膜或镀金属薄膜作为电容器的一个电极，当薄膜感受压力而变形时，薄膜与固定电极之间形成的电容量发生变化，再通过电路检测到电容的变化，来达到效果。
+用到CLK时钟脚/CMD命令脚和DATA[0:7]八位数据线
 
 
-
-4、电磁压力传感器
-
-利用电磁原理的传感器统称，主要包括电感压力传感器、霍尔压力传感器、电涡流压力传感器等
+----------
 
 
-
-5、振弦式压力传感器
-
-振弦式压力传感器属于频率敏感型传感器，这种频率测量具有想当高的准确度，因为时间和频率是能准确测量的物理量参数，而且频率信号在传输过程中可以忽略电缆的电阻、电感、电容等因素的影响。振弦式压力传感器的敏感元件是拉紧的钢弦，敏感元件的固有频率与拉紧力的大小有关。
+**2、SD**
 
 
+![这里写图片描述](https://img-blog.csdn.net/20180604185706461?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-当然小米8探索版究竟用的是哪款方案和哪款传感器，希望在后续的更新中能够拆卸分析，从发布会的PPT上觉得还是比较大的概率性是振弦式压力传感器。
+SD卡的通信支持两种方式一种是SD总线模式、一种是SPI模式（对几个使用的定义不一样）
 
-二、人脸解锁——Face ID技术分析
+而实际使用中，我们是可能插SD卡使用，也有可能不插SD卡使用，因此不插SD卡使用时，这几个信号交就存在浮空状态了，因此硬件设计中会通过给CMD和DATE脚上拉个10K的电阻来处理浮空问题。
 
-
-
-"img/13-3.png"
-
+![这里写图片描述](https://img-blog.csdn.net/20180604185948628?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 
-Face ID”它基于3D结构光技术，可投射，创建脸部毫米级3D面部模型。
-
-通过前置的 Infrared Camera 和 Dot Project 组件，小米8探索版能够快速扫描人的面部并在人脸表面形成 33000个编码点阵来获取面部深度信息，把你的脸部进行一个3D建模。
-
-"img/13-4.png"
+**3、Secure Digital I/O (SDIO)**
+AMR335X拥有3路的SDIO
+![这里写图片描述](https://img-blog.csdn.net/20180604190400534?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 
+----------
 
-所以这次845加持的几个功能就派上用场了：
+**4、GPIO**
+AMR335X一共有4组通用输入输出
+每组输入输出有32个引脚。
+你可要用这些GPIO来开发很多东西，包括了键盘、或则PWB捕获等等。
 
-Spectra 280 ISP
+其中第一组GPIO0和其他三组有点小区别，
+GPIO0 is in the Wakeup domain and may
+be used to wakeup the device via external sources. GPIO[1:3] are located in the peripheral domain.
+![这里写图片描述](https://img-blog.csdn.net/20180604191943279?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-Adreno 630
+转至：
+https://mp.weixin.qq.com/s/LHOcr66ktBisaYdORG-2cQ
 
-Hexagon DSP
+欢迎关注本人公众号： 
+![这里写图片描述](https://img-blog.csdn.net/20180604192331655?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-SPU
+ [AM335x硬件开发使用指南（一）](https://mp.weixin.qq.com/s/_LyrLfjVbcO5G_-nBDlaJw)
+https://blog.csdn.net/weixin_42124889/article/details/80514842
 
-为Face ID的人脸处理和建模、安全性提供了保障。
-三、透明玻璃机身
+AMR335x硬件开发使用指南（二）
+https://mp.weixin.qq.com/s/krjhaz7LvXxiT2a9pvnAFw
 
-<img src="/e/13-1.jpg"/>
+聊聊无线充电——华为Mate RS保时捷版无线充电器详解（上篇） 
+https://blog.csdn.net/weixin_42124889/article/details/80290757
 
-透明玻璃机身这个技术本来应该请我们的结构和材料工程师来好好分析的，但有想到了，本人搭建这个公众号的目的在于帮助更多的人了解电子，和带电子人入门和行内人交流。
-因此也想出了一个和电子搭边的理由来聊聊透明玻璃机身——
+聊聊无线充电——华为Mate RS保时捷版无线充电器详解（下篇） 
+https://mp.weixin.qq.com/s/9o8-7YANXCiydjQ8u-EDsg
 
-"img/13-5	.png"
-那就是我们可以更加清晰的看到了电路板的芯片和布局
+手机快充技术——快充技术&硬件详解 
+https://blog.csdn.net/weixin_42124889/article/details/80255434
 
-欢迎关注我的公众号
-"img/微信公众号二维码.jpg"
+一文知晓高通晓龙845 
+https://mp.weixin.qq.com/s?__biz=MzU2NjYwMzQ1Ng==&mid=2247483678&idx=1&sn=c396ca9582a7f5124e0b00cb94d6a482&chksm=fca8bab1cbdf33a79189346c9ed964bca08f446427f67a509b3577bec2fd533fe6aeb39d5eaf#rd
+
+A12 chip即将来临，是IPhone XI？ 
+https://mp.weixin.qq.com/s/j3IJdhY1CKS7aW120zgs8Q

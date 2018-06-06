@@ -3,7 +3,7 @@ title:  "聊聊无线充电——华为Mate RS保时捷版无线充电器详解�
 subtitle: "Only lights from space"
 author: "Wferr"
 avatar: "img/authors/wferr.png"
-image: "img/power.jpg"
+image: "img/power.png"
 date:   2015-04-23 12:12:12
 ---
 

@@ -1,0 +1,139 @@
+---
+title:  "聊聊无线充电——华为Mate RS保时捷版无线充电器详解（上篇）"
+subtitle: "Only lights from space"
+author: "Wferr"
+avatar: "img/authors/wferr.png"
+image: "img/power.png"
+date:   2015-04-23 12:12:12
+---
+
+### 聊聊无线充电——华为Mate RS保时捷版无线充电器详解（上篇）
+随着华为Mate RS成为手机奢侈件的新宠后；人们聊起RS保时捷系列的话题也多了起来，今天我们来聊聊这款手机的配件——华为Mate RS保时捷版无线充电器，然后再展开聊聊无线充电这些事
+
+一、华为Mate RS保时捷版无线充电器
+--
+![这里写图片描述](https://img-blog.csdn.net/20180512132338382?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+主体                                型号                   华为无线充电器
+                                       类型                          单口
+                                       品牌                          华为
+                                适用手机品牌                  通用
+规格                         输入电压（v）                 9V
+                                输出电压（v）                 5V
+                                     插口                       TYPE-C
+
+既然我们是要来聊聊技术这方面的，肯定需要将外壳拆掉的拉，下面直接上图
+![这里写图片描述](https://img-blog.csdn.net/20180512132746188?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+----------
+
+
+二、拆解后芯片分析
+---------
+
+PCB板看来很简单，用到了几款比较通用的芯片
+
+
+1、CYPD3171 CCG3PA
+--
+
+CYPRESS赛普拉斯 CYPD3171 CCG3PA 第三代产品。其内建ARM Cortex-M0处理器，64KB Flash 8KB SRAM，支持QC4.0，苹果2.4A，三星AFC和BC1.2充电协议。
+
+然后我们找到了官网的datasheet，找到了该芯片的详细介绍
+
+**General Description**
+EZ-PD™ CCG3PA is Cypress’ highly integrated USB Type-C port controller that complies with the latest USB Type-C and PD standards and is targeted for PC power adapters, mobile chargers, car chargers, and power bank applications. In such applications,CCG3PA provides additional functionalities and BOM integration advantages. CCG3PA uses Cypress’ proprietary M0S8 technology with a 32-bit Arm® Cortex™-M0 processor, 64-KB flash, a complete Type-C USB-PD transceiver, all termination resistors required for a Type-C port, an integrated feedback control circuitry for voltage (VBUS) regulation and system-level ESD protection. It is available in 24-pin QFN and 16-pin SOIC packages
+
+然后我们研究了下拆卸的电路板 结合资料---然后发现了充电协议的芯片电路
+![这里写图片描述](https://img-blog.csdn.net/20180512134322862?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+使用USB通信
+USB D-/Port 3 pin 1: GPIO/UART_1_RX0/AFC/QC/BC 1.2/Apple Charging/IEC
+USB D+/Port 3 pin 0: GPIO/UART_1_TX0/AFC/QC/BC 1.2/Apple Charging/IEC
+
+
+2、W25X40CL存储器
+--
+
+Winbond华邦 W25X40CL存储器，4Mbit，工作电压范围2.3-3.6V，用来存储IDTP9237配置
+
+看到Winbond后，突然有种无处不见的感觉，很多嵌入式系统中的常客啊
+
+![这里写图片描述](https://img-blog.csdn.net/20180512135701344?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+引脚和以前用过的W25Q64一样，就直接贴以前设计的图了
+
+![这里写图片描述](https://img-blog.csdn.net/20180512135725458?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+使用SPI通信
+（1）SDI – SerialData In,串行数据输入； 
+（2）SDO – SerialDataOut,串行数据输出； 
+（3）SCLK – Serial Clock,时钟信号，由主设备产生； 
+（4）CS – Chip Select,从设备使能信号，由主设备控制。
+
+
+3、 PSMN2R4 
+--
+Nexperia安世半导体 PSMN2R4
+
+![这里写图片描述](https://img-blog.csdn.net/20180512140847665?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+RS保时捷版无线充电器使用了四颗 PSMN2R4 MOS管组成H桥驱动电路；
+
+
+4、P9237
+----------
+
+该板子的重头戏，IDT公司的P9237，不过想起了99元的小米无线充电器也使用了这款芯片。。。
+可是无线充电方案中IDT确实是一家独大
+然后在网上和关上确确实实也找不到P9237的资料。。。
+![这里写图片描述](https://img-blog.csdn.net/20180512142318751?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+不过我们的目的聊的是无线充电，因此找了一个功率也为10W的IDT芯片来了解下工作原理和电路搭建
+
+15W的P221-R芯片
+![这里写图片描述](https://img-blog.csdn.net/20180512142649242?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+官网的datasheet确实良心也提供了电路设计参考，这里就直接贴上电路图了
+![这里写图片描述](https://img-blog.csdn.net/20180512142830913?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+本来打算以拆卸华为Mate RS保时捷版无线充电器引出的无线充电技术的
+可是发现单单充电器的引子都太长了，因此分上下篇来聊吧
+
+
+三、无线技术
+--
+
+[AM335x硬件开发使用指南（一）](https://mp.weixin.qq.com/s/_LyrLfjVbcO5G_-nBDlaJw)
+
+
+聊聊无线充电——华为Mate RS保时捷版无线充电器详解（上篇） 
+https://blog.csdn.net/weixin_42124889/article/details/80290757
+
+聊聊无线充电——华为Mate RS保时捷版无线充电器详解（下篇） 
+https://mp.weixin.qq.com/s/9o8-7YANXCiydjQ8u-EDsg
+
+手机快充技术——快充技术&硬件详解 
+https://blog.csdn.net/weixin_42124889/article/details/80255434
+
+一文知晓高通晓龙845 
+https://mp.weixin.qq.com/s?__biz=MzU2NjYwMzQ1Ng==&mid=2247483678&idx=1&sn=c396ca9582a7f5124e0b00cb94d6a482&chksm=fca8bab1cbdf33a79189346c9ed964bca08f446427f67a509b3577bec2fd533fe6aeb39d5eaf#rd
+
+A12 chip即将来临，是IPhone XI？ 
+https://mp.weixin.qq.com/s/j3IJdhY1CKS7aW120zgs8Q
+
+
+![这里写图片描述](https://img-blog.csdn.net/20180524102915892?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+欢饮关注我的公众号
+
+
+
+
+
+
+
+

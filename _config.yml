@@ -1,10 +1,8 @@
 # Site settings
-title: Modern Blog V2
-description: Modern-Blog A Elegant template for Jekyll
-keywords: Modern, Blogging, Fun
-author: Nadun
-baseurl: "/Jekyll-Modern-Blog" # the subpath of your site, e.g. /blog/
+title: JKfeng1010的博客
+description: 一个电子工程师的自我修炼
+keywords: 硬件,PCB,电路图,电子,新技术
+author: JKfeng1010
+baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
-gems: [jekyll-paginate,jekyll-seo-tag,jekyll-sitemap]
-paginate: 3
-google_analytics: 'UA-XXXXXXX-X'
+menu: 菜单1,菜单2,菜单3，菜单4,

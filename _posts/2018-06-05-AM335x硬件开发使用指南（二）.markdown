@@ -1,131 +1,102 @@
 ---
-title:  "AM335x硬件开发使用指南（二）"
+title:  "小米发布会的米8探索者——很吓人的技术分析!"
 subtitle: "技术流分析"
 author: "JKFENG"
 avatar: "img/authors/wferr.png"
-image: "img/ARMchip.png"
+image: "img/13-1.png"
 date:   2018-05-31 12:12:12
 ---
-### 一、AM335x硬件开发使用指南（二）
+
+
+
+
+### 一、小米发布会的米8探索者——很吓人的技术分析
 
 
 
 
 
-Functional Block Diagram
-------------------------
+就在刚刚小米在深圳发布了3款手机1款电视1款VR一体1款手环，下面我们从技术的角度来看看这次发布会的探索版。
 
-![这里写图片描述](https://img-blog.csdn.net/20180601093834764?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+小米8透明探索版
+一、全球首款压感屏幕指纹手机——屏幕解锁技能分析
 
-二、系统端资源
--------
-
-**1、Enhanced direct memory access（eDMA）**
-
-EDMA用于：传输到片上存储器和从片上存储器传输和传输到外部存储器（EMIF，GPMC，从器件外设）上。简单的来说，EDMA（增强型DMA控制器）是从硬件角度处理数据传输的问题，大大加速了数据复制速度，而不过多占用软件资源。
-
-同时335X片子的EDMA
-具有三个第三方传输控制器（TPTC）和一个第三方通道控制器（TPCC）
-支持多达64个可编程逻辑通道和八个QDMA通道。
-
-由此判断从硬件的角度出发，用335X来开发大数据处理是没什么问题的。
-
-如果真的对用335X开发大数据有兴趣的，建议可以看下EDMA的引擎和TCD单元。
-
-PS：eDMA模块包括两个主要模块：eDMA引擎和传输控制描述符TCD单元。其中，eDMA引擎的功能主要包括源地址和目的地址的计算和实际的数据搬移操作；TCD单元的功能是为每个通道定义传输的源地址和目的地址、次循环的大小、单次传输的字节量及传输方式等信息。
-![这里写图片描述](https://img-blog.csdn.net/20180601095722845?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-
-----------
-
-**2、Timers**
-
-拥有8个的Timers，感觉Timers网上资料特别多，也比较基础，因此不多聊，贴上一图
-![这里写图片描述](https://img-blog.csdn.net/2018060109594581?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+"img/13-2.gif"
 
 
-----------
+
+压力传感方案目前市面比较成熟的有五种：
 
 
-**3、WatchDog Timer（WDT）**
 
-Watchdog Timer，几时就是一个定时器电路，对系统频率进行分频计数，定时器溢出时，对系统进行复位。
-一般有一个输入，叫喂狗（kicking the dog or service the dog），一个输出到MCU的RST端。MCU正常工作的时候，每隔一段时间输出一个信号到喂狗端，给WDT清零，如果超过规定的时间不喂狗（一般在程序跑飞时），WDT定时超过预先设定值，就会给出一个复位信号到MCU，使MCU重新开始工作。看门狗的作用就是防止程序发生死循环，或者叫程序跑飞。
+1、压电压力传感器
 
-而现在基本所有的Soc芯片，基本都集成WDT功能，因此对WDT的实现目前都基于软件开发了。
-为了大家更好的理解，这里贴一张以前对于WDT的电路设计
-![这里写图片描述](https://img-blog.csdn.net/20180601100903468?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-
-而软件模拟看门狗，只要有个timer就可以模拟。
-一般可以调用一个类似watchdog(void)的函数，因为由于软件平台不一样可能对WDT的软件处理方式不一样，但是原理基本一致，这一点所有软件包括了以前的电路设计都是一样的，只不过现在基于方便性和成本，而用软件来处理同一件事罢了。
+压电式压力传感器主要基于压电效应（Piezoelectric effect），利用电气元件和其他机械把待测的压力转换成为电量，从而传输电量变量给系统。
 
 
-----------
 
-**4、Real-time clock（RTC）**
-时钟电路，为了不掉电，一般都需要长期有电。这个也是为什么你电脑主机里面有个纽扣电池的原因。
-![这里写图片描述](https://img-blog.csdn.net/20180601101442387?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+2、压阻压力传感器
 
-
-----------
-
-**5、Enhanced high-resolution PWM modules(eHRPWM)**
-拥有3路的eHRPEM。
-脉宽调制子系统的组成之一，另外两个则是强采集（eCAP），强正交编码脉冲(eQEP)
-可以在最小的CPU开销下产生复杂的脉宽波形。
-这个设计到低层驱动的问题了。不加以谈论。
+压阻压力传感器主要基于压阻效应（Piezoresistive effect）。压阻效应是用来描述材料在受到机械式应力下所产生的电阻变化。不同于上述压电效应，压阻效应只产生阻抗变化，再通过电路检测到电阻的变化，来达到效果。
 
 
-----------
+
+3、电容式压力传感器
+
+电容式压力传感器是一种利用电容作为敏感元件，将被测压力转换成电容值改变的压力传感器。这种压力传感器一般采用圆形金属薄膜或镀金属薄膜作为电容器的一个电极，当薄膜感受压力而变形时，薄膜与固定电极之间形成的电容量发生变化，再通过电路检测到电容的变化，来达到效果。
 
 
-**6、Enhanced quadrature encoder pulse (eQEP)**
-拥有3路的eQEP。
-![这里写图片描述](https://img-blog.csdn.net/20180601103109940?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-增强的正交编码器脉冲主要功能单元
-•每个引脚（GPIO MUX的一部分）的可编程输入资格
-•正交解码器单元（QDU）
-•用于位置测量的位置计数器和控制单元PCCU）
-•用于低速测量的正交边缘捕获单元（QCAP）
-•用于速度/频率测量的单位时基（UTIME）•用于检测失速的看门狗定时器（QWDOG）
+
+4、电磁压力传感器
+
+利用电磁原理的传感器统称，主要包括电感压力传感器、霍尔压力传感器、电涡流压力传感器等
 
 
-----------
+
+5、振弦式压力传感器
+
+振弦式压力传感器属于频率敏感型传感器，这种频率测量具有想当高的准确度，因为时间和频率是能准确测量的物理量参数，而且频率信号在传输过程中可以忽略电缆的电阻、电感、电容等因素的影响。振弦式压力传感器的敏感元件是拉紧的钢弦，敏感元件的固有频率与拉紧力的大小有关。
 
 
-**7、Power, Reset, and Clock Management (PRCM)**
 
-一个电源、复位和时钟的管理系统。
+当然小米8探索版究竟用的是哪款方案和哪款传感器，希望在后续的更新中能够拆卸分析，从发布会的PPT上觉得还是比较大的概率性是振弦式压力传感器。
 
-
-**8、Enhanced capture modules (eCAP)**
-拥有3路的eCAP
-![这里写图片描述](https://img-blog.csdn.net/20180601104615943?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+二、人脸解锁——Face ID技术分析
 
 
-三、Parallel
---
 
-这个下次再更新吧。
-
-欢迎关注本人公众号：
-![这里写图片描述](https://img-blog.csdn.net/20180601104815370?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-这里写图片描述
-
-[AM335x硬件开发使用指南（一）](https://mp.weixin.qq.com/s/_LyrLfjVbcO5G_-nBDlaJw)
-https://blog.csdn.net/weixin_42124889/article/details/80514842
+"img/13-3.png"
 
 
-聊聊无线充电——华为Mate RS保时捷版无线充电器详解（上篇） 
-https://blog.csdn.net/weixin_42124889/article/details/80290757
 
-聊聊无线充电——华为Mate RS保时捷版无线充电器详解（下篇） 
-https://mp.weixin.qq.com/s/9o8-7YANXCiydjQ8u-EDsg
+Face ID”它基于3D结构光技术，可投射，创建脸部毫米级3D面部模型。
 
-手机快充技术——快充技术&硬件详解 
-https://blog.csdn.net/weixin_42124889/article/details/80255434
+通过前置的 Infrared Camera 和 Dot Project 组件，小米8探索版能够快速扫描人的面部并在人脸表面形成 33000个编码点阵来获取面部深度信息，把你的脸部进行一个3D建模。
 
-一文知晓高通晓龙845 
-https://mp.weixin.qq.com/s?__biz=MzU2NjYwMzQ1Ng==&mid=2247483678&idx=1&sn=c396ca9582a7f5124e0b00cb94d6a482&chksm=fca8bab1cbdf33a79189346c9ed964bca08f446427f67a509b3577bec2fd533fe6aeb39d5eaf#rd
+"img/13-4.png"
 
-A12 chip即将来临，是IPhone XI？ 
-https://mp.weixin.qq.com/s/j3IJdhY1CKS7aW120zgs8Q
+
+
+所以这次845加持的几个功能就派上用场了：
+
+Spectra 280 ISP
+
+Adreno 630
+
+Hexagon DSP
+
+SPU
+
+为Face ID的人脸处理和建模、安全性提供了保障。
+三、透明玻璃机身
+
+<img src="/e/13-1.jpg"/>
+
+透明玻璃机身这个技术本来应该请我们的结构和材料工程师来好好分析的，但有想到了，本人搭建这个公众号的目的在于帮助更多的人了解电子，和带电子人入门和行内人交流。
+因此也想出了一个和电子搭边的理由来聊聊透明玻璃机身——
+
+"img/13-5	.png"
+那就是我们可以更加清晰的看到了电路板的芯片和布局
+
+欢迎关注我的公众号
+"img/微信公众号二维码.jpg"

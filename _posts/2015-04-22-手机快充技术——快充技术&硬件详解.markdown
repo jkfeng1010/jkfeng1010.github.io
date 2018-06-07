@@ -3,7 +3,7 @@ title:  "手机快充技术——快充技术&硬件详解"
 subtitle: "The Bigger the better?"
 author: "Wferr"
 avatar: "img/authors/wferr.png"
-image: "img/quick.png"
+image: "img/quick.jpg"
 date:   2015-04-22 12:12:12
 ---
 

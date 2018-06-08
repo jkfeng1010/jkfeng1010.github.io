@@ -11,7 +11,7 @@ date:   2018-05-31 12:12:12
 Functional Block Diagram
 ------------------------
 
-![图片1](https://img-blog.csdn.net/20180605154011760?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![这里写图片描述](https://img-blog.csdn.net/20180605154011760?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 四、Display
 ----------
@@ -19,7 +19,7 @@ Functional Block Diagram
 **1、24-bit LCD controller**
 24位的液晶显示控制，有时候开发的也会用到16位，下面贴上AM335X对于这着24位的引脚定义，方面各位后续开发对于引脚的引出
 
-![图片2](https://img-blog.csdn.net/2018060515423577?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![这里写图片描述](https://img-blog.csdn.net/2018060515423577?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 AM335X中LCDC由两个独立的控制器，光栅控制器和LCD接口显示驱动器（LIDD）控制器组成。每个控制器都独立于另一个控制器运行，并且在任何给定时间只有其中一个控制器处，由下图可以知道数据在寄存器后分为了两条线：Raster controller、LIDD controller。
 ![这里写图片描述](https://img-blog.csdn.net/20180605155207417?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
@@ -70,8 +70,6 @@ AM335X中触摸屏控制器（TSC）和模数转换器（ADC）子系统（TSC_A
 
 如果是使用I2C方案的话，输入引脚就只涉及到了时钟脚SLK和IO脚SDA了。
 
-转至
-https://mp.weixin.qq.com/s/M-zdlg7zstVhsueuJjiZPA
 
 ----------
 
@@ -107,4 +105,3 @@ https://mp.weixin.qq.com/s?__biz=MzU2NjYwMzQ1Ng==&mid=2247483678&idx=1&sn=c396ca
 
 A12 chip即将来临，是IPhone XI？ 
 https://mp.weixin.qq.com/s/j3IJdhY1CKS7aW120zgs8Q
-

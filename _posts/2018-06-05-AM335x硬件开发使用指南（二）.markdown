@@ -6,7 +6,11 @@ avatar: "img/authors/wferr.png"
 image: "img/ARMchip.png"
 date:   2018-05-31 12:12:12
 ---
-### 一、AM335x硬件开发使用指南（二）
+
+
+
+
+### AM335x硬件开发使用指南（二）
 
 
 
@@ -107,12 +111,23 @@ Watchdog Timer，几时就是一个定时器电路，对系统频率进行分频
 
 这个下次再更新吧。
 
-欢迎关注本人公众号：
-![这里写图片描述](https://img-blog.csdn.net/20180601104815370?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-这里写图片描述
 
-[AM335x硬件开发使用指南（一）](https://mp.weixin.qq.com/s/_LyrLfjVbcO5G_-nBDlaJw)
+
+欢迎关注我的公众号
+
+![这里写图片描述](https://img-blog.csdn.net/20180605163047559?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+AM335x硬件开发使用指南（三） 
+https://mp.weixin.qq.com/s/LHOcr66ktBisaYdORG-2cQ
+https://blog.csdn.net/weixin_42124889/article/details/80571506
+
+AMR335x硬件开发使用指南（二） 
+https://mp.weixin.qq.com/s/krjhaz7LvXxiT2a9pvnAFw
+
+AM335x硬件开发使用指南（一） 
 https://blog.csdn.net/weixin_42124889/article/details/80514842
+
 
 
 聊聊无线充电——华为Mate RS保时捷版无线充电器详解（上篇） 

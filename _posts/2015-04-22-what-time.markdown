@@ -1,5 +1,5 @@
 ---
-title:  "Watches"
+title:  "高考后，电子工程师的专业是什么，电子工程师是怎么进阶的！！"
 subtitle: "The Bigger the better?"
 author: "Wferr"
 avatar: "img/authors/wferr.png"
@@ -7,14 +7,162 @@ image: "img/c.jpg"
 date:   2015-04-22 12:12:12
 ---
 
-### Dolor sit amet?
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum non mi non pulvinar. Donec tempus risus vel ex fringilla tempor. Vivamus pharetra non mauris quis fermentum. Vestibulum sed maximus elit, sit amet suscipit orci. Morbi at enim at libero dignissim egestas vel ac nisi. Etiam at lectus a arcu sodales consequat. Aliquam consequat ligula sed purus tincidunt, a ultrices nibh dapibus. Phasellus convallis ipsum nec semper ultricies. In facilisis lacus velit, sit amet lacinia velit blandit id. Nullam ut magna erat. Aliquam sit amet dapibus odio, aliquet tempus tortor. Donec in nisi massa.
+### 高考后，电子工程师的专业是什么，电子工程师是怎么进阶的！！
+此文比较长，适合于入门到进阶到高级工程师的路程。由于高考后，许多学生也会选择电子行业相关专业，因此也写一篇关于电子工程师是做什么的和需要会什么技能的文章。
+此文适合于：选择电子专业的学生、踏入工作不久比较没方向的电子人。
 
-### Aliquam suscipit.
-Cras eget nisl accumsan, porta nisl in, egestas sapien. Vestibulum gravida nulla sed facilisis tempor. Suspendisse maximus nisi sit amet velit sodales fringilla. Vivamus luctus risus eget dui consectetur porttitor. Maecenas ut ultrices orci. Maecenas mollis est eu sodales mollis. Nulla facilisi. Suspendisse eros arcu, elementum sed sem eu, pharetra rhoncus odio. Proin nec tincidunt velit. Cras nisl augue, faucibus sed mauris in, vestibulum mollis nisl. Nam id libero ultrices, consequat ex vitae, convallis nulla.
+第①：电子工程师是干嘛的
+------------
 
-Suspendisse lorem odio, blandit at nisl quis, hendrerit tempus tellus. Donec eget leo quis nisi vulputate consectetur. Praesent dignissim enim elit, congue luctus nisl cursus at. Sed rutrum molestie risus. Donec vulputate gravida accumsan. Vivamus tempus ullamcorper eleifend. Sed sagittis mi ut dolor tincidunt, ac rutrum nisi commodo.
+中兴事件以后，越来越多的人知道了“集成电路产业”，或许你们4年后出来，你们刚刚好站在了这个行业的刚需上了，与集成电路产业相关的一些工作一般是干嘛呢？这里主要聊聊电子工程师是干嘛的
 
-Fusce non elit in diam rutrum vestibulum. Donec vitae elementum erat. Praesent elementum eget justo at bibendum. Fusce interdum diam lorem, ut placerat elit pretium quis. Quisque eu urna at quam commodo sagittis. Etiam posuere convallis tincidunt. Phasellus vitae ligula neque. Vivamus a purus at dolor iaculis placerat. Curabitur convallis eu lacus congue sagittis.
+划重点，下图就是你要干的活啦
+![这里写图片描述](https://img-blog.csdn.net/20180608205410877?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+电子工程师成长离不开哪些软技能？
 
-Aliquam suscipit fermentum mauris a accumsan. In facilisis, mauris quis pulvinar tempus, turpis sapien sodales nibh, nec feugiat augue est quis nisi. Fusce eget odio feugiat, luctus quam et, dapibus nulla. Sed ornare lacus non libero lacinia pretium. In eu dui vitae purus euismod feugiat ac ac est. Morbi vitae pretium lorem, non eleifend felis. Nullam at massa feugiat, rutrum elit at, semper lacus. Etiam vel rutrum felis. Nullam quis auctor lorem, et tempor arcu.
+
+以下是进行电子工程师所需软技能总结
+简单的来说，电子工程师需要：会产品分析、会电路分析、会电路设计、会画PCB、会焊电路板、会测试、会调试、会简单的软件编写、会FPGA、会DSP、会ARM，会……
+
+总的来说，除了泡妞技能没有什么是你不会的
+![这里写图片描述](https://img-blog.csdn.net/2018060820542860?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+第②：电子工程师相关专业
+------------
+
+
+电子信息工程：主要研究信息的获取与处理，电子设备与信息系统的设计、开发、应用和集成。电子信息工程已经涵盖了社会的诸多方面。电子信息工程专业是集现代电子技术、信息技术、通信技术于一体的专业。
+微电子科学与工程：相当于电子产品的脑细胞，研究半导体材料上构成的小型化电路、电力及系统的电子分支。微电子科学与工程是物理学、电子学、材料科学、计算机科学、集成电路设计制造学等多个学科和超净、超纯、超精细加工技术基础上发展起来的一门新兴学科。
+通信工程：是电子工程的一个重要分支，电子信息类子专业，同时也是其中一个基础学科。简单说就是实现人与人、人与计算机、计算机与计算进行信息交换的链路，从而达到信息共享。比如4G/5G技术，互联网、Wi-Fi等都属于此范畴。
+![这里写图片描述](https://img-blog.csdn.net/20180608205441784?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+第③：电子工程师进阶宝典
+------------
+
+怎么说，如果最后你还是决定选择了电子专业，而且致力于成为电子人而奋斗的话，送你一个表情看看。
+
+![这里写图片描述](https://img-blog.csdn.net/20180608205501275?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+你！！！！！！！！！！！！！
+真的是认真的吗！！！！
+那么笔者通过多年的经验传你一本如来神掌秘籍。
+
+![这里写图片描述](https://img-blog.csdn.net/20180608205515689?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+祝你在暑假中实现弯道超车，走向幸福的开挂人生
+
+
+**1、入门级宝典**
+
+《电路》—— 邱关源
+《模拟电子基础》——童诗白 
+《数字电子基础》——阎石 
+
+以上三门书，足以让你欲仙欲死的了，因此笔者推荐一本简单容易的书给你们。
+
+《爱上制作：75个最棒的制作项目》
+
+暴力入门电子世界，从这本书中，你可以知道大部分的电子器件和电子工具。
+
+**2、助理工程师级别**
+
+这时候你需要一门计算机语言来支持你接下来对新世界的发现，强烈推荐C语言
+
+书籍推荐：《C Primer Plus》中文版还是英文版任君喜爱，
+强调一点，别在看高校最喜欢发的那本了（这里不好直接指明）
+
+看完C以后，我们需要实操了吧，这个时候，建议学单片机了。
+单片机书籍随便哪一本都可以，先从头看到尾吧，最好是有实物单片机实验泡一下，这下好歹你也是做过项目的人了。
+
+好了这下你可以出去应聘，当个助理工程师了
+
+![这里写图片描述](https://img-blog.csdn.net/20180608205536128?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+**3、入门级工程师**
+
+这下你可是不仅仅是跟着师傅工作了，你也可以开始从事一些有小小难度的工作了，这个时候，你要掌握一门画电路板的软件了，Cadence、AD、Protel等等，这里强烈推荐Cadence和allegro，因为画起电路板，速度感觉不要不要的，我也是碰了Cadence和allegro再也不想碰其他画板软件了。
+
+这里推荐于博士的视频教学
+
+除了会画电路板外，你还得会简单的焊接，因为在后续的电路板调试过程你会碰到各种各样的问题，焊接是最基本的了。
+
+焊电路板的秘籍只能多动手了
+
+这下你出去行走江湖基本就是不怕饿死的状态了。
+很多应届生出去也是这个水平了。
+
+**4、可要独立工作的电子工程师**
+
+恭喜你看到这一步了，这可了不得了。
+这一步可以说很多人今后都停留在这里，卡在这个瓶颈出不去，最后分享个通过此瓶颈的简单，但是耗时间的方法。
+
+电子器件datasheet得会看、会分析电路。可要编写简单测试程序。
+
+看datasheet，由于很多第一手资料都是英文的，所以基本英语单词得懂咯，当你看了10篇或以上后，你就会发现所有的datasheet用来用去都是那几个词，你记住几个关键参数单词基本就没问题了。
+但是英文是很重要的技能哟
+
+电路分析。这个除了经验外，还是需要你建立起对以前工作的一些经验，一般电路分析，无非就是：CPU模块、外设模块、电源模块
+
+这个时候，你就得将行业经典的书籍翻出来都看一看了，这个也是你突破此瓶颈的方法之一。
+![这里写图片描述](https://img-blog.csdn.net/20180608205554670?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+建议看完这些说，你基本就上了一个档级的了。
+
+**4、可要独立工作的稍高级电子工程师**
+
+一般到这个职位，都是可要当个小组长什么的了
+
+这个时候你可是要精通一们ARM或则FPGA某一个分支的活啦
+
+还是学会带小朋友们。
+
+生产工艺得跟吧。
+
+成本估计得会吧！！
+
+说多都是泪呀！
+
+![这里写图片描述](https://img-blog.csdn.net/20180608205608184?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+祝你在暑假中实现弯道超车，走向幸福的开挂人生
+
+文章的第三个推文则为上面推荐的书籍下载链接
+
+
+如果觉得写得不错，晚上有没有宵夜吃就看你们的了
+![这里写图片描述](https://img-blog.csdn.net/20180608204727441?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+欢迎关注我的公众号
+![这里写图片描述](https://img-blog.csdn.net/20180608204714590?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyNDg4OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+AM335x硬件开发使用指南（五） 
+https://blog.csdn.net/weixin_42124889/article/details/80624148
+
+AM335x硬件开发使用指南（四） 
+https://blog.csdn.net/weixin_42124889/article/details/80582423
+
+AM335x硬件开发使用指南（三） 
+https://mp.weixin.qq.com/s/LHOcr66ktBisaYdORG-2cQ 
+https://blog.csdn.net/weixin_42124889/article/details/80571506
+
+AMR335x硬件开发使用指南（二） 
+https://mp.weixin.qq.com/s/krjhaz7LvXxiT2a9pvnAFw
+
+AM335x硬件开发使用指南（一） 
+https://blog.csdn.net/weixin_42124889/article/details/80514842
+
+聊聊无线充电——华为Mate RS保时捷版无线充电器详解（上篇） 
+https://blog.csdn.net/weixin_42124889/article/details/80290757
+
+聊聊无线充电——华为Mate RS保时捷版无线充电器详解（下篇） 
+https://mp.weixin.qq.com/s/9o8-7YANXCiydjQ8u-EDsg
+
+手机快充技术——快充技术&硬件详解 
+https://blog.csdn.net/weixin_42124889/article/details/80255434
+
+一文知晓高通晓龙845 
+https://mp.weixin.qq.com/s?__biz=MzU2NjYwMzQ1Ng==&mid=2247483678&idx=1&sn=c396ca9582a7f5124e0b00cb94d6a482&chksm=fca8bab1cbdf33a79189346c9ed964bca08f446427f67a509b3577bec2fd533fe6aeb39d5eaf#rd
+
+A12 chip即将来临，是IPhone XI？ 
+https://mp.weixin.qq.com/s/j3IJdhY1CKS7aW120zgs8Q
